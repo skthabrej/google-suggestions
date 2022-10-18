@@ -7,24 +7,19 @@ import './index.css'
 class GoogleSuggestions extends Component {
   state = {searchInput:''}
 
-  updateSearchInput = value => {
-    this.setState({
-      searchInput: value,
-    })
-  }
-
   onChangeSearchInput = event => {
     this.setState({searchInput:event.target.value})
+  }
+
+  updateSearchInput = value => {
+    this.setState({searchInput:value})
   }
 
   render() {
     const {searchInput} = this.state
     const {suggestionsList} = this.props
-    const searchResults = suggestionsList.filter(eachSuggestion =>
-      eachSuggestion.suggestion
-        .toLowerCase()
-        .includes(searchInput.toLowerCase()),
-    )
+    const searchResults = suggestionsList.filter(eachSuggestion => (
+      eachSuggestion.suggestion.toLowerCase().includes(searchInput.toLocaleLowerCase())),)
 
     return (
       <div className="google-search-suggestions-app-container">
@@ -41,20 +36,14 @@ class GoogleSuggestions extends Component {
                 className="search-icon"
                 src="https://assets.ccbp.in/frontend/react-js/google-search-icon.png"
               />
-              <input
-                type="search"
-                className="search-input"
-                placeholder="Search Google"
-                onChange={this.onChangeSearchInput}
-                value={searchInput}
-              />
+              <input type="search" placeholder='search google' onChange={this.onChangeSearchInput} className="search-input" value={searchInput}/>
             </div>
             <ul className="suggestions-list">
               {searchResults.map(eachSuggestion => (
                 <SuggestionItem
-                  key={eachSuggestion.id}
                   suggestionDetails={eachSuggestion}
                   updateSearchInput={this.updateSearchInput}
+                  key={eachSuggestion.id}
                 />
               ))}
             </ul>
