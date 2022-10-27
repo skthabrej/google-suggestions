@@ -22,15 +22,15 @@
     }
   }
   
-  .google-logo {
-    width: 150px;
-    height: 55px;
+  .google-logo{
+    width: 100px;
+    height: 100px;
   }
   
   @media screen and (min-width: 768px) {
     .google-logo {
-      width: 432px;
-      height: 140px;
+      width: 500px;
+      height: 170px;
     }
   }
   

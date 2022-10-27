@@ -25,7 +25,7 @@ class GoogleSuggestions extends Component {
       <div className="google-search-suggestions-app-container">
         <div className="google-suggestions-container">
           <img
-            src="https://assets.ccbp.in/frontend/react-js/google-logo.png"
+            src="https://i.postimg.cc/8zq0qJjr/google-ge091fa45a-1280.png"
             alt="google logo"
             className="google-logo"
           />
@@ -34,7 +34,7 @@ class GoogleSuggestions extends Component {
               <img
                 alt="search icon"
                 className="search-icon"
-                src="https://assets.ccbp.in/frontend/react-js/google-search-icon.png"
+                src="https://i.postimg.cc/Hk2qR0fv/seo-g0d75393d0-1280.png"
               />
               <input type="search" placeholder='search google' onChange={this.onChangeSearchInput} className="search-input" value={searchInput}/>
             </div>
